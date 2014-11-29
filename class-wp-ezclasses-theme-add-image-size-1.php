@@ -69,7 +69,7 @@ if ( ! class_exists('Class_WP_ezClasses_Theme_Add_Image_Size_1') ) {
 	
 	  $arr_init_defaults = $this->init_defaults();
 	  
-	  $this->_arr_init = WP_ezMethods::ez_array_merge(array($arr_init_defaults, $arr_args));
+	  $this->_arr_init = WPezHelpers::ez_array_merge(array($arr_init_defaults, $arr_args));
 	  
 	  $this->_bool_remove_width_height = (bool)$this->_arr_init['remove_width_height_filter'];
 	  $this->_bool_isnc_defaults = (bool)$this->_arr_init['isnc_defaults'];
@@ -120,13 +120,13 @@ if ( ! class_exists('Class_WP_ezClasses_Theme_Add_Image_Size_1') ) {
 	 */ 
 	public function ez_ais( $arr_args = '' ){
 	
-	  if ( ! WP_ezMethods::array_pass($arr_args) ){
+	  if ( ! WPezHelpers::ez_array_pass($arr_args) ){
 	    return array('status' => false, 'msg' => 'ERROR: arr_args is not valid', 'source' => get_class() . ' ' . __METHOD__, 'arr_args' => 'error');
 	  }
 	  
-	  $arr_args = WP_ezMethods::ez_array_merge(array( $this->_arr_init, $arr_args)); 
+	  $arr_args = WPezHelpers::ez_array_merge(array( $this->_arr_init, $arr_args)); 
 	  
-	  if ( $arr_args['active'] === true && WP_ezMethods::array_pass($arr_args['arr_args']) ){
+	  if ( $arr_args['active'] === true && WPezHelpers::ez_array_pass($arr_args['arr_args']) ){
 	    $arr_add_image_size = $this->pre_process($arr_args);
 		
 		// do (it)
@@ -140,13 +140,13 @@ if ( ! class_exists('Class_WP_ezClasses_Theme_Add_Image_Size_1') ) {
 	 */ 
 	public function ez_isnc( $arr_args = '' ){
 	
-	  if ( ! WP_ezMethods::array_pass($arr_args) ){
+	  if ( ! WPezHelpers::ez_array_pass($arr_args) ){
 	    return array('status' => false, 'msg' => 'ERROR: arr_args is not valid', 'source' => get_class() . ' ' . __METHOD__, 'arr_args' => 'error');
 	  }
 	  
-	  $arr_args = WP_ezMethods::ez_array_merge(array( $this->_arr_init, $arr_args)); 
+	  $arr_args = WPezHelpers::ez_array_merge(array( $this->_arr_init, $arr_args)); 
 	  
-	  if ( $arr_args['active'] === true && WP_ezMethods::array_pass($arr_args['arr_args']) ){
+	  if ( $arr_args['active'] === true && WPezHelpers::ez_array_pass($arr_args['arr_args']) ){
 	  
 	    $arr_add_image_size = $this->pre_process($arr_args);
 		
@@ -175,7 +175,7 @@ if ( ! class_exists('Class_WP_ezClasses_Theme_Add_Image_Size_1') ) {
 				*/
 
       // active_true
-	  if ( WP_ezMethods::ez_true($arr_args['active_true']) ){
+	  if ( WPezHelpers::ez_true($arr_args['active_true']) ){
 	    
 		$arr_active_true_response = $this->add_image_size_active_true($arr_add_image_size);
 		  
@@ -196,11 +196,11 @@ if ( ! class_exists('Class_WP_ezClasses_Theme_Add_Image_Size_1') ) {
 	
 	  $str_return_source = get_class() . ' > ' . __METHOD__; 
 	  
-	  if ( WP_ezMethods::array_pass($arr_args) ) {
+	  if ( WPezHelpers::ez_array_pass($arr_args) ) {
 	    $arr_active_true = array();			
 		  
 		foreach ($arr_args as $str_key => $arr_value){
-		  if ( WP_ezMethods::ez_true($arr_value['active']) ){
+		  if ( WPezHelpers::ez_true($arr_value['active']) ){
 		    $arr_active_true[$str_key] = $arr_value;
 		  }			
 		}
@@ -421,7 +421,7 @@ if ( ! class_exists('Class_WP_ezClasses_Theme_Add_Image_Size_1') ) {
 	  $str_return_source = get_class() . ' > ' . __METHOD__; 
 	  
 	  // do we have an array with some "stuff" in it
-	  if ( WP_ezMethods::array_pass($arr_args) ){
+	  if ( WPezHelpers::ez_array_pass($arr_args) ){
 	  
 	    $arr_ais_defaults = $this->add_image_size_defaults();
 		$arr_resize_ratios = $this->resize_ratios();
