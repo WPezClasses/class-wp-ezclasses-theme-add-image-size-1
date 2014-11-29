@@ -1,7 +1,9 @@
 # Org: WPezClasses
 ### Product: Class_WP_ezClasses_Theme_Add_Image_Size_1
 
-##### WordPress add_image_size(), set_post_thumbnail_size() and a couple other WP image bits get ezTized. Why this matters is listed below.
+##### WordPress add_image_size(), set_post_thumbnail_size() and a couple other WP image bits get ezTized. 
+
+Why this matters is listed below.
 
 ===============================================================================================
 
